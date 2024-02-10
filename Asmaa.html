@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card-img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+
+        function loadCard() {
+            showMessage('You are the most Gorgeous girl in the world');
+            setTimeout(function () {
+                showMessage('One more thing sunny');
+                setTimeout(function () {
+                    showMessage('Legally you have to say yes to this... so');
+                    document.getElementById('valentineText').innerText = "Will you do me the honor of being My valentine?";
+                    document.getElementById('teddyBear').style.display = 'block';
+                    document.getElementById('yesButton').style.display = 'inline-block';
+                    document.getElementById('noButton').style.display = 'inline-block';
+                }, 2000);
+            }, 2000);
+        }
+
+        function handleYesButtonClick() {
+            showMessage('It is a pleasure. Thank you, baby.');
+        }
+
+        function handleNoButtonClick() {
+            showMessage('Illegal');
+        }
+    </script>
+</head>
+
+<body onload="loadCard()">
+    <div class="container">
+        <img id="teddyBear" src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" alt="Valentine's Day Bear" class="card-img">
+        <h1 id="valentineText">Loading...</h1>
+        <button id="yesButton" class="btn" onclick="handleYesButtonClick()">Yes</button>
+        <button id="noButton" class="btn" onclick="handleNoButtonClick()">No</button>
+    </div>
+</body>
+
+</html>
